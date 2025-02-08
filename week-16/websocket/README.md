@@ -34,6 +34,6 @@ npm run dev
 
 # Install ws
 ````bash
-npm i ws @types/ws
+npm install ws @types/ws
 ````
 
