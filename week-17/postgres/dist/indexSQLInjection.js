@@ -23,15 +23,8 @@ app.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     const password = req.body.password;
     const email = req.body.email;
     try {
-        // let sqlQuery="INSERT INTO users (username,password,email) VALUES ("
-        // sqlQuery+=username;
-        // sqlQuery+=",";
-        // sqlQuery+=email;
-        // sqlQuery+=",";
-        // sqlQuery+=password;
-        // sqlQuery+=")";
-        const inserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}');`;
-        const response = yield pgClient3.query(inserQuery);
+        const inserQuery = `INSERT INTO users (username, password, email) VALUES ($1, $2, $3);`;
+        const response = yield pgClient3.query(inserQuery, [username, password, email]);
         res.json({
             message: "You have signed up"
         });

@@ -20,26 +20,19 @@ const pgClient3 = new pg_1.Client("postgresql://neondb_owner:npg_UTFGDoA7WP8H@ep
 pgClient3.connect();
 app.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const username = req.body.username;
-    const password = req.body.password;
+    const password = req.boody.password;
     const email = req.body.email;
-    try {
-        // let sqlQuery="INSERT INTO users (username,password,email) VALUES ("
-        // sqlQuery+=username;
-        // sqlQuery+=",";
-        // sqlQuery+=email;
-        // sqlQuery+=",";
-        // sqlQuery+=password;
-        // sqlQuery+=")";
-        const inserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}');`;
-        const response = yield pgClient3.query(inserQuery);
-        res.json({
-            message: "You have signed up"
-        });
-    }
-    catch (e) {
-        res.json({
-            message: "Something went wrong"
-        });
-    }
+    // let sqlQuery="INSERT INTO users (username,password,email) VALUES ("
+    // sqlQuery+=username;
+    // sqlQuery+=",";
+    // sqlQuery+=email;
+    // sqlQuery+=",";
+    // sqlQuery+=password;
+    // sqlQuery+=")";
+    const inserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}');`;
+    const response = yield pgClient3.query(inserQuery);
+    res.json({
+        message: "You have signed up"
+    });
 }));
 app.listen(3000);

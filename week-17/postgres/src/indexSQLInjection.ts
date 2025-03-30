@@ -17,21 +17,13 @@ app.post("/signup",async(req:any,res:any)=>{
 
     try{
 
-        // let sqlQuery="INSERT INTO users (username,password,email) VALUES ("
-        // sqlQuery+=username;
-        // sqlQuery+=",";
-        // sqlQuery+=email;
-        // sqlQuery+=",";
-        // sqlQuery+=password;
-        // sqlQuery+=")";
-
         
 
-        const inserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}');`;
+        const inserQuery = `INSERT INTO users (username, password, email) VALUES ($1, $2, $3);`;
 
 
 
-        const response=await pgClient3.query(inserQuery);
+        const response=await pgClient3.query(inserQuery ,[username,password,email]);
 
 
         res.json({
