@@ -34,3 +34,7 @@ npm install @prisma/client
 npx prisma generate
 ```
 
+```bash
+ npm install express @types/express
+ ```
+
