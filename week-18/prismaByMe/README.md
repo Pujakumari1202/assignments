@@ -27,3 +27,10 @@ npx prisma init
 npx prisma migrate dev
 ```
 
+
+## generate prisma client
+```bash
+npm install @prisma/client
+npx prisma generate
+```
+
