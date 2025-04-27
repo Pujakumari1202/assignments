@@ -6,3 +6,6 @@
 npx create-next-app@latest
 ````
 
+```bash
+npm install axios
+```
